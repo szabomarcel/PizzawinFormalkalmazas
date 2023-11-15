@@ -39,13 +39,14 @@
             this.radioButton_LegfeljebbSzazEzer = new System.Windows.Forms.RadioButton();
             this.radioButton_szazezerFelett = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button_Megvasarlas = new System.Windows.Forms.Button();
+            this.button_ujrendeles = new System.Windows.Forms.Button();
+            this.numericUpDown_db_szam = new System.Windows.Forms.NumericUpDown();
+            this.textBox_Pizza_Nev = new System.Windows.Forms.TextBox();
+            this.label_Pizza_Nev = new System.Windows.Forms.Label();
             this.textBox_SzamlaigenylesNeve = new System.Windows.Forms.TextBox();
             this.button_Szamlaigenyles = new System.Windows.Forms.Button();
-            this.label_Pizza_Nev = new System.Windows.Forms.Label();
-            this.textBox_Pizza_Nev = new System.Windows.Forms.TextBox();
-            this.numericUpDown_db_szam = new System.Windows.Forms.NumericUpDown();
-            this.button_ujrendeles = new System.Windows.Forms.Button();
-            this.button_Megvasarlas = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_db_szam)).BeginInit();
@@ -92,6 +93,7 @@
             this.button_Fajl_valasztas.TabIndex = 3;
             this.button_Fajl_valasztas.Text = "Fájl kiválasztás";
             this.button_Fajl_valasztas.UseVisualStyleBackColor = false;
+            this.button_Fajl_valasztas.Click += new System.EventHandler(this.button_Fajl_valasztas_Click);
             // 
             // button_atlag
             // 
@@ -106,6 +108,7 @@
             this.button_atlag.TabIndex = 4;
             this.button_atlag.Text = "Átlag számítás a pizzákra";
             this.button_atlag.UseVisualStyleBackColor = false;
+            this.button_atlag.Click += new System.EventHandler(this.button_atlag_Click);
             // 
             // groupBox1
             // 
@@ -174,6 +177,57 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Pizza igénylés és mennyisége választás";
             // 
+            // button_Megvasarlas
+            // 
+            this.button_Megvasarlas.BackColor = System.Drawing.Color.Orange;
+            this.button_Megvasarlas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_Megvasarlas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Megvasarlas.Location = new System.Drawing.Point(20, 166);
+            this.button_Megvasarlas.Name = "button_Megvasarlas";
+            this.button_Megvasarlas.Size = new System.Drawing.Size(335, 43);
+            this.button_Megvasarlas.TabIndex = 17;
+            this.button_Megvasarlas.Text = "Megvásárlás";
+            this.button_Megvasarlas.UseVisualStyleBackColor = false;
+            this.button_Megvasarlas.Click += new System.EventHandler(this.button_Megvasarlas_Click);
+            // 
+            // button_ujrendeles
+            // 
+            this.button_ujrendeles.BackColor = System.Drawing.Color.DarkOliveGreen;
+            this.button_ujrendeles.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_ujrendeles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_ujrendeles.Location = new System.Drawing.Point(20, 215);
+            this.button_ujrendeles.Name = "button_ujrendeles";
+            this.button_ujrendeles.Size = new System.Drawing.Size(335, 42);
+            this.button_ujrendeles.TabIndex = 16;
+            this.button_ujrendeles.Text = "Új rendelés";
+            this.button_ujrendeles.UseVisualStyleBackColor = false;
+            this.button_ujrendeles.Click += new System.EventHandler(this.button_ujrendeles_Click);
+            // 
+            // numericUpDown_db_szam
+            // 
+            this.numericUpDown_db_szam.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.numericUpDown_db_szam.Location = new System.Drawing.Point(20, 140);
+            this.numericUpDown_db_szam.Name = "numericUpDown_db_szam";
+            this.numericUpDown_db_szam.Size = new System.Drawing.Size(335, 20);
+            this.numericUpDown_db_szam.TabIndex = 15;
+            // 
+            // textBox_Pizza_Nev
+            // 
+            this.textBox_Pizza_Nev.Location = new System.Drawing.Point(20, 114);
+            this.textBox_Pizza_Nev.Name = "textBox_Pizza_Nev";
+            this.textBox_Pizza_Nev.Size = new System.Drawing.Size(335, 20);
+            this.textBox_Pizza_Nev.TabIndex = 14;
+            this.textBox_Pizza_Nev.Text = "Pizza_név";
+            // 
+            // label_Pizza_Nev
+            // 
+            this.label_Pizza_Nev.AutoSize = true;
+            this.label_Pizza_Nev.Location = new System.Drawing.Point(17, 98);
+            this.label_Pizza_Nev.Name = "label_Pizza_Nev";
+            this.label_Pizza_Nev.Size = new System.Drawing.Size(133, 13);
+            this.label_Pizza_Nev.TabIndex = 13;
+            this.label_Pizza_Nev.Text = "Pizza neve kiválaztás után";
+            // 
             // textBox_SzamlaigenylesNeve
             // 
             this.textBox_SzamlaigenylesNeve.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -193,55 +247,11 @@
             this.button_Szamlaigenyles.TabIndex = 11;
             this.button_Szamlaigenyles.Text = "Számlaigénylés";
             this.button_Szamlaigenyles.UseVisualStyleBackColor = false;
+            this.button_Szamlaigenyles.Click += new System.EventHandler(this.button_Szamlaigenyles_Click);
             // 
-            // label_Pizza_Nev
+            // openFileDialog1
             // 
-            this.label_Pizza_Nev.AutoSize = true;
-            this.label_Pizza_Nev.Location = new System.Drawing.Point(17, 98);
-            this.label_Pizza_Nev.Name = "label_Pizza_Nev";
-            this.label_Pizza_Nev.Size = new System.Drawing.Size(133, 13);
-            this.label_Pizza_Nev.TabIndex = 13;
-            this.label_Pizza_Nev.Text = "Pizza neve kiválaztás után";
-            // 
-            // textBox_Pizza_Nev
-            // 
-            this.textBox_Pizza_Nev.Location = new System.Drawing.Point(20, 114);
-            this.textBox_Pizza_Nev.Name = "textBox_Pizza_Nev";
-            this.textBox_Pizza_Nev.Size = new System.Drawing.Size(335, 20);
-            this.textBox_Pizza_Nev.TabIndex = 14;
-            this.textBox_Pizza_Nev.Text = "Pizza_név";
-            // 
-            // numericUpDown_db_szam
-            // 
-            this.numericUpDown_db_szam.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.numericUpDown_db_szam.Location = new System.Drawing.Point(20, 140);
-            this.numericUpDown_db_szam.Name = "numericUpDown_db_szam";
-            this.numericUpDown_db_szam.Size = new System.Drawing.Size(335, 20);
-            this.numericUpDown_db_szam.TabIndex = 15;
-            // 
-            // button_ujrendeles
-            // 
-            this.button_ujrendeles.BackColor = System.Drawing.Color.DarkOliveGreen;
-            this.button_ujrendeles.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_ujrendeles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_ujrendeles.Location = new System.Drawing.Point(20, 215);
-            this.button_ujrendeles.Name = "button_ujrendeles";
-            this.button_ujrendeles.Size = new System.Drawing.Size(335, 42);
-            this.button_ujrendeles.TabIndex = 16;
-            this.button_ujrendeles.Text = "Új rendelés";
-            this.button_ujrendeles.UseVisualStyleBackColor = false;
-            // 
-            // button_Megvasarlas
-            // 
-            this.button_Megvasarlas.BackColor = System.Drawing.Color.Orange;
-            this.button_Megvasarlas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_Megvasarlas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Megvasarlas.Location = new System.Drawing.Point(20, 166);
-            this.button_Megvasarlas.Name = "button_Megvasarlas";
-            this.button_Megvasarlas.Size = new System.Drawing.Size(335, 43);
-            this.button_Megvasarlas.TabIndex = 17;
-            this.button_Megvasarlas.Text = "Megvásárlás";
-            this.button_Megvasarlas.UseVisualStyleBackColor = false;
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // Form1
             // 
@@ -262,6 +272,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Pizza_winForm";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -291,6 +302,7 @@
         private System.Windows.Forms.Button button_ujrendeles;
         private System.Windows.Forms.NumericUpDown numericUpDown_db_szam;
         private System.Windows.Forms.Button button_Megvasarlas;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 
