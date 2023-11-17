@@ -84,12 +84,13 @@ namespace PizzawinFormalkalmazas
 
         private void atlagszamitas()
         {
+            int osszesar = 0;
             double atlag = 0;
             foreach (Pizza item in listBox_Pizza_nevek.Items)
             {
-                atlag += item.PizzaAr;
+                osszesar += item.PizzaAr;
             }
-            atlag = atlag / listBox_Pizza_nevek.Items.Count;
+            atlag = osszesar / listBox_Pizza_nevek.Items.Count;
             MessageBox.Show($"A pizzák átlaga: {atlag.ToString("#,##0.00")}", "A pizzák átlaga", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
