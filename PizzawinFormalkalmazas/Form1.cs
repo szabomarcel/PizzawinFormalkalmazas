@@ -96,17 +96,13 @@ namespace PizzawinFormalkalmazas
 
         private void button_Szamlaigenyles_Click(object sender, EventArgs e)
         {
-            if (listBox_Pizza_nevek.SelectedIndex < 0)
-            {
-                return;
-            }
             if (listBox_Pizza_nevek.SelectedIndex >= 0)
             {
-                Pizza kivalasztottPizza = (Pizza)listBox_Pizza_nevek.SelectedItem;
-                bool nagyobbTerulet = kivalasztottPizza.PizzaAr > 100000;
+                Pizza selectedPizza = (Pizza)listBox_Pizza_nevek.SelectedItem;
+                bool greaterThanThreshold = selectedPizza.PizzaAr > 1000;
 
-                MessageBox.Show($"{kivalasztottPizza.PizzaNev} {(nagyobbTerulet ? "nagyobb" : "legfeljebb")} 100.000 területű.",
-                                nagyobbTerulet ? "Nagyobb terület" : "Legfeljebb 100.000 terület",
+                MessageBox.Show($"{selectedPizza.PizzaNev} {(greaterThanThreshold ? "nagyobb" : "legfeljebb")} 1000ft összegű.",
+                                greaterThanThreshold ? "Nagyobb terület" : "Legfeljebb 1000ft összegű",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
@@ -144,7 +140,7 @@ namespace PizzawinFormalkalmazas
         {
             // Az új űrlap létrehozása
             Form1 newForm = new Form1();
-
+            listBox_Pizza_nevek.Items.Clear();
             // Az új űrlap megjelenítése
             newForm.Show();
         }
